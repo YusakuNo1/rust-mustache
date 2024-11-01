@@ -22,17 +22,19 @@ Install it through Cargo!
 ```toml
 [dependencies]
 mustache = "*"
+serde = { version = "1.0", features = ["derive"] }
 ```
 
 # Basic example
 
 ```rust
 #[macro_use]
-extern crate serde_derive;
+extern crate serde;
 extern crate mustache;
 
 use std::io;
 use mustache::MapBuilder;
+use serde::Serialize;
 
 #[derive(Serialize)]
 struct Planet {
